@@ -5,13 +5,12 @@ import settings
 
 def getstoptimes():
     api_parameters = [
-      ('appID', settings.OCTRASPOAPPID),
+      ('appID', settings.OCTRASPOAPPID), #appID and apiKey are in hidden file settings.py
       ('apiKey', settings.OCTRANSPOAPIKEY),
       ('routeNo', '86'),
       ('stopNo', '6032'),
       ('format', 'json'),
       ]
-    #r = requests.get('https://api.octranspo1.com/v1.2/GetNextTripsForStop', data=data)
     requeststop = requests.post('https://api.octranspo1.com/v1.2/GetNextTripsForStop', data=api_parameters)
     #print(requeststop.text) #this is for debugging, it prints the json as a string into the shell
 
@@ -21,9 +20,7 @@ def getstoptimes():
     #parsed_json = json.loads(requeststop.text) #loads is load string r.text is the text format
     parsed_json = json.loads(example_json) #Uses the example json object
 
-    #print(parsed_json['GetNextTripsForStopResult']['StopLabel'])
-    #print(parsed_json['GetRouteSummaryForStopResult']['StopDescription'])
-    #description = (parsed_json['GetNextTripsForStopResult']['StopDescription'])
+    stop_label = parsed_json['GetNextTripsForStopResult']['StopLabel']
     trip_start_time_0 = parsed_json['GetNextTripsForStopResult']['Route']['RouteDirection']['Trips']['Trip'][0]['TripStartTime']
     return trip_start_time_0
     #print(parsed_json['StopLabel'])

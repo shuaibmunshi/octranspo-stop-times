@@ -16,11 +16,10 @@ def main():
     #parsed_json = json.loads(r.text) #loads is load string r.text is the text format
     #jsonstoptime = parsed_json['GetNextTripsForStopResult']['StopNo']
     stoptimes = getstoptimes()
-    html = "<h3>Hello {name}!</h3>" \
-           #"<b>Stoptime:</b> {stoptime}<br/>" \
+    html = "<h3>Stop 6032, Northbound:</h3>" \
            "<b>Stoptime:</b> {functionstoptime}<br/>" \
            "<b>Hostname:</b> {hostname}<br/>"
-    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), functionstoptime=stoptimes)
+    return html.format(hostname=socket.gethostname(), functionstoptime=stoptimes)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
