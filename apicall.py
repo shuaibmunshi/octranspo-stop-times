@@ -15,11 +15,12 @@ def getstoptimes(stop_number):
     #print(requeststop.text) #this is for debugging, it prints the json as a string into the shell
 
     #use example json below if you're staying up too late and there are no more trips to fetch from OCtranspo
-    example_json = '{"GetNextTripsForStopResult":{"StopNo":"6032","StopLabel":"FISHER DYNES","Error":"","Route":{"RouteDirection":{"RouteNo":86,"RouteLabel":"Elmvale","Direction":"Eastbound","Error":"","RequestProcessingTime":"20171208115954","Trips":{"Trip":[{"TripDestination":"Hurdman","TripStartTime":"11:50","AdjustedScheduleTime":"9","AdjustmentAge":"0.85","LastTripOfSchedule":false,"BusType":"4E DEH","Latitude":"45.342767","Longitude":"-75.728672","GPSSpeed":"0.5"},{"TripDestination":"Elmvale","TripStartTime":"12:02","AdjustedScheduleTime":"19","AdjustmentAge":"0.72","LastTripOfSchedule":false,"BusType":"4LA - DEH","Latitude":"45.348399","Longitude":"-75.762452","GPSSpeed":"0.5"},{"TripDestination":"Hurdman","TripStartTime":"12:18","AdjustedScheduleTime":"34","AdjustmentAge":"-1","LastTripOfSchedule":false,"BusType":"4E - DEH","Latitude":"","Longitude":"","GPSSpeed":""}]}}}}}'
+    #example_json = '{"GetNextTripsForStopResult":{"StopNo":"6032","StopLabel":"FISHER DYNES","Error":"","Route":{"RouteDirection":{"RouteNo":86,"RouteLabel":"Elmvale","Direction":"Eastbound","Error":"","RequestProcessingTime":"20171208115954","Trips":{"Trip":[{"TripDestination":"Hurdman","TripStartTime":"11:50","AdjustedScheduleTime":"9","AdjustmentAge":"0.85","LastTripOfSchedule":false,"BusType":"4E DEH","Latitude":"45.342767","Longitude":"-75.728672","GPSSpeed":"0.5"},{"TripDestination":"Elmvale","TripStartTime":"12:02","AdjustedScheduleTime":"19","AdjustmentAge":"0.72","LastTripOfSchedule":false,"BusType":"4LA - DEH","Latitude":"45.348399","Longitude":"-75.762452","GPSSpeed":"0.5"},{"TripDestination":"Hurdman","TripStartTime":"12:18","AdjustedScheduleTime":"34","AdjustmentAge":"-1","LastTripOfSchedule":false,"BusType":"4E - DEH","Latitude":"","Longitude":"","GPSSpeed":""}]}}}}}'
 
-    #parsed_json = json.loads(api_response.text) #loads is load string r.text is the text format
-    parsed_json = json.loads(example_json) #Uses the example json object
+    parsed_json = json.loads(api_response.text) #loads is load string r.text is the text format
+    #parsed_json = json.loads(example_json) #Uses the example json object
 
+    #Builds the dict object with all of the required API data
     parsed_dict = {}
     parsed_dict["stop_label"] = parsed_json['GetNextTripsForStopResult']['StopLabel']
     parsed_dict["route_number"] = parsed_json['GetNextTripsForStopResult']['Route']['RouteDirection']['RouteNo']

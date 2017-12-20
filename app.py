@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 import os
 import socket
 import requests
@@ -13,20 +14,18 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     stoptimes = getstoptimes(stop_number=6032) #Parameter is the stop number
-    real_gps_time = getgpstime(stop_time=stoptimes['scheduled_stop_time_0'],adjustment_time=stoptimes['schedule_adjustment_time_0'])
-    html = "<h3>Bus Stop 6032: {stop_label}</h3>" \
-           "<b>Bus Number:</b> {route_number}</br>" \
-           "<b>Trip Destination:</b> {trip_destination_0}</br>" \
-           "<b>Scheduled Stop Time:</b> {scheduled_stop_time_0}<br/>" \
-           "<b>Real GPS Time:</b> {real_gps_time}<br/>" \
-           "<b>GPS Adjustment Minutes:</b> {schedule_adjustment_time_0}<br/>"
-    return html.format(stop_label=stoptimes['stop_label'],
-                       route_number=stoptimes['route_number'],
-                       trip_destination_0=stoptimes['trip_destination_0'],
-                       scheduled_stop_time_0=stoptimes['scheduled_stop_time_0'],
-                       schedule_adjustment_time_0=stoptimes['schedule_adjustment_time_0'],
-                       real_gps_time=real_gps_time
-                       )
+    #Fetches the GPS time using the scheduled time and the time delta from the GPS position of the bus
+    real_gps_time = getgpstime(stop_time=stoptimes['scheduled_stop_time_0'],
+                    adjustment_time=stoptimes['schedule_adjustment_time_0'])
+    #render_template is a Flask function that returns renders what is in app/templates
+    return render_template('index.html',
+                        stop_label=stoptimes['stop_label'],
+                        route_number=stoptimes['route_number'],
+                        trip_destination_0=stoptimes['trip_destination_0'],
+                        scheduled_stop_time_0=stoptimes['scheduled_stop_time_0'],
+                        schedule_adjustment_time_0=stoptimes['schedule_adjustment_time_0'],
+                        real_gps_time=real_gps_time
+                        )
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
