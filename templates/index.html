@@ -6,27 +6,51 @@
     </head>
     <body>
       <div class="row">
-        <h1>Bus Stop 6032: {{stop_label}}</h1></br>
+        <h1>Bus Stop 6032: {{stop_label_6032}} (NORTH)</h1>
         <div class="column">
           <p class= "data">
-          Bus Number: <span>{{route_number}}</span></br>
-          Trip Destination: <span>{{trip_destination_0}}</span></br>
-          Scheduled Stop Time: <span>{{scheduled_stop_time_0}}</span><br/>
-          Real GPS Time: <span>{{real_gps_time_0}}</span><br/>
-          GPS Adjustment Minutes: <span>{{schedule_adjustment_time_0}}</span><br/>
-          Clock: <span>{{current_time}}</span>
+            <span>Trip Number 1</span></br>
+            Bus Number: <span>{{route_number}}</span></br>
+            Trip Destination: <span>{{trip_destination_6032_0}}</span></br>
+            Scheduled Stop Time: <span>{{scheduled_stop_time_6032_0}}</span><br/>
+            Real GPS Time: <span><font color="red">{{real_gps_time_6032_0}}</font></span><br/>
+            GPS Adjustment Minutes: <span>{{schedule_adjustment_time_6032_0}}</span><br/>
+            </p>
+        </div>
+        <div class="column">
+          <p class= "data">
+            <span>Trip Number 2</span></br>
+            Bus Number: <span>{{route_number}}</span></br>
+            Trip Destination: <span>{{trip_destination_6032_1}}</span></br>
+            Scheduled Stop Time: <span>{{scheduled_stop_time_6032_1}}</span><br/>
+            Real GPS Time: <span><font color="red">{{real_gps_time_6032_1}}</font></span><br/>
+            GPS Adjustment Minutes: <span>{{schedule_adjustment_time_6032_1}}</span><br/>
           </p>
         </div>
+      </div>
+      <div class="row">
+        <h1>Bus Stop 6031: {{stop_label_6031}} (SOUTH)</h1>
         <div class="column">
           <p class= "data">
-          Bus Number: <span>{{route_number}}</span></br>
-          Trip Destination: <span>{{trip_destination_1}}</span></br>
-          Scheduled Stop Time: <span>{{scheduled_stop_time_1}}</span><br/>
-          Real GPS Time: <span>{{real_gps_time_1}}</span><br/>
-          GPS Adjustment Minutes: <span>{{schedule_adjustment_time_1}}</span><br/>
-          Clock: <span>{{current_time}}</span>
-        </p>
+            <span>Trip Number 1</span></br>
+            Bus Number: <span>{{route_number}}</span></br>
+            Trip Destination: <span>{{trip_destination_6031_0}}</span></br>
+            Scheduled Stop Time: <span>{{scheduled_stop_time_6031_0}}</span><br/>
+            Real GPS Time: <span><font color="red">{{real_gps_time_6031_0}}</font></span><br/>
+            GPS Adjustment Minutes: <span>{{schedule_adjustment_time_6031_0}}</span><br/>
+            </p>
         </div>
+        <div class="column">
+          <p class= "data">
+            <span>Trip Number 2</span></br>
+            Bus Number: <span>{{route_number}}</span></br>
+            Trip Destination: <span>{{trip_destination_6031_1}}</span></br>
+            Scheduled Stop Time: <span>{{scheduled_stop_time_6031_1}}</span><br/>
+            Real GPS Time: <span><font color="red">{{real_gps_time_6031_1}}</font></span><br/>
+            GPS Adjustment Minutes: <span>{{schedule_adjustment_time_6031_1}}</span><br/>
+          </p>
+        </div>
+      <h1>Clock: <span><font color="red">{{current_time}}</font></span></h1>
       </div>
         <!--
 <div class="row">
