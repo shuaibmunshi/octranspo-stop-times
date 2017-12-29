@@ -1,0 +1,7 @@
+body            {font-family: 'Verdana', sans-serif; color: #f5f5dc; background-color: #3d3d5c;}
+a, h1, h2       {color: #f5f5dc;}
+h1, h2          {font-family: 'Verdana', sans-serif; margin: 0;}
+h2              {font-size: 1.2em;}
+.data           {font-family: 'Verdana', sans-serif; margin: 0;}
+.data span      {font-weight: bold; color: #3399ff}
+.error          {background: #f0d6d6; padding: 0.5em;}
