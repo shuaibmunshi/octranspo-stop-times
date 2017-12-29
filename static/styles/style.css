@@ -1,7 +1,12 @@
-body            {font-family: 'Verdana', sans-serif; color: #f5f5dc; background-color: #3d3d5c;}
-a, h1, h2       {color: #f5f5dc;}
-h1, h2          {font-family: 'Verdana', sans-serif; margin: 0;}
-h2              {font-size: 1.2em;}
-.data           {font-family: 'Verdana', sans-serif; margin: 0;}
-.data span      {font-weight: bold; color: #3399ff}
+* {box-sizing: border-box;} /*This is to make the two collumns*/
+body            {font-size: 20px; font-family: 'Verdana', sans-serif; background-color: #3d3d5c; padding: 10px;}
+h1              {font-family: 'Verdana', sans-serif; font-size: 25px; color: #f5f5dc; margin: 0;}
+h2              {font-family: 'Verdana', sans-serif; font-size: 20px; color: #f5f5dc; margin: 0;}
+.data           {font-weight: bold; font-family: 'Verdana', sans-serif; color: #d8ae6a}
+.data span      {font-weight: normal; color: #f5f5dc}
+/* span allows sub formatting within the paragraph.
+In this case the variable values are a different colour and are not bolded */
 .error          {background: #f0d6d6; padding: 0.5em;}
+.column {float: left; width: 50%; padding: 10px;}
+.column2 {float: right; width: 50%; padding: 10px;}
+.row:after {content: ""; display: table; clear: both;}

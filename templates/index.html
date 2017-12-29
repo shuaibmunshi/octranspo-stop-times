@@ -2,19 +2,43 @@
     <head>
         <title>OCTranspo Stop Times</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
+        <!--<meta http-equiv="refresh" content="30"> -->
     </head>
     <body>
-        <h1>Bus Stop 6032: {{stop_label}}</h1>
-        <p class= "data">
-        Bus Number: <span>{{route_number}}</span></br>
-        Trip Destination: <span>{{trip_destination_0}}</span></br>
-        Scheduled Stop Time: <span>{{scheduled_stop_time_0}}</span><br/>
-        Real GPS Time: <span>{{real_gps_time}}</span><br/>
-        GPS Adjustment Minutes: <span>{{schedule_adjustment_time_0}}</span><br/>
-        Clock: <span>{{current_time}}</span>
+      <div class="row">
+        <h1>Bus Stop 6032: {{stop_label}}</h1></br>
+        <div class="column">
+          <p class= "data">
+          Bus Number: <span>{{route_number}}</span></br>
+          Trip Destination: <span>{{trip_destination_0}}</span></br>
+          Scheduled Stop Time: <span>{{scheduled_stop_time_0}}</span><br/>
+          Real GPS Time: <span>{{real_gps_time_0}}</span><br/>
+          GPS Adjustment Minutes: <span>{{schedule_adjustment_time_0}}</span><br/>
+          Clock: <span>{{current_time}}</span>
+          </p>
+        </div>
+        <div class="column">
+          <p class= "data">
+          Bus Number: <span>{{route_number}}</span></br>
+          Trip Destination: <span>{{trip_destination_1}}</span></br>
+          Scheduled Stop Time: <span>{{scheduled_stop_time_1}}</span><br/>
+          Real GPS Time: <span>{{real_gps_time_1}}</span><br/>
+          GPS Adjustment Minutes: <span>{{schedule_adjustment_time_1}}</span><br/>
+          Clock: <span>{{current_time}}</span>
         </p>
+        </div>
+      </div>
+        <!--
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+-->
     </body>
 </html>
